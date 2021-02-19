@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "46073de3-dca7-4b53-afbb-93a44f4fd00d",
+		"name": "api.blackboardapp.co",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Firebase Email Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"displayName\": \"User Test\",\n    \"email\": \"test@blackboardapp.co\",\n    \"phoneNumber\": \"+66803147507\",\n    \"password\": \"12345678\",\n    \"passwordConf\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}/api/auth/blackbaord/firebase/email/signup",
+						"description": "Test Descriptions support"
+					},
+					"response": [
+						{
+							"name": "400 Bad Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"displayName\": \"User Test\",\n    \"email\": \"test@blackboardapp.co\",\n    \"phoneNumber\": \"+66803147507\",\n    \"password\": \"00000000\",\n    \"passwordConf\": \"00000000\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/auth/blackbaord/firebase/email/signup"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "129"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"81-vlMyX4rfJuxeW7UPsw9S8LJKy30\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Feb 2021 16:12:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"statusCode\": 400,\n    \"message\": \"กรุณากรอก ช่องยืนยันรหัสผ่าน\"\n}"
+						},
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"displayName\": \"User Test\",\n    \"email\": \"test@blackboardapp.co\",\n    \"phoneNumber\": \"+66803147507\",\n    \"password\": \"12345678\",\n    \"passwordConf\": \"12345678\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}/api/auth/blackbaord/firebase/email/signup"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1841"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"731-FFQQsULvqFnq1L5FzwGiO2iU3I4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 18 Feb 2021 16:15:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 201,\n    \"message\": \"signup\",\n    \"uid\": \"yjxJc66CNMVz8QM9Ogl3D4VWKLK2\",\n    \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsImlhdCI6MTYxMzY2NDkzMywiZXhwIjoxNjEzNjY4NTMzLCJpc3MiOiJmaXJlYmFzZS1hZG1pbnNkay1jdzZrYUBhdXRoLXNlcnZpY2UtYjRmYTkuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1jdzZrYUBhdXRoLXNlcnZpY2UtYjRmYTkuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJ1aWQiOiJ5anhKYzY2Q05NVno4UU05T2dsM0Q0VldLTEsyIn0.ELOkB16lsGpO3A3lBW9GdFmQmnzb5LILfWhSL56ykNQHB-z-fEyZ5Zz07_HDZFtPBZKzM7XMvkv5sptL2z7sQ2jQt4_nFfOcGWZGGy-rC__JUUJ886R7aAqmuMWa_liRkZfwrmYfySVxUTwkmYnCo0poJqoyNMLapVNR_eYVf1jAYXJiOPysPPwPzUb8OOcbLXSHN5QbHIFUfHo3etKXK0fecFWt-Wudsv3UlbWfIndKWrJo74FLvRKIeNSL2ANcHKLpQHyP5pNMS5JvHwN6kdJ7GWSIXvDQAPIBLpkx_VfOdoovn3qXOMD0FiqLsdGoMMAkTh6Ofu4EdpLxcwEYcg\",\n    \"emailVerified\": false,\n    \"metadata\": {\n        \"a\": \"1613664932712\",\n        \"b\": \"1613664932712\",\n        \"lastSignInTime\": \"Thu, 18 Feb 2021 16:15:32 GMT\",\n        \"creationTime\": \"Thu, 18 Feb 2021 16:15:32 GMT\"\n    },\n    \"data\": [\n        {\n            \"user_id\": \"6079879589511823391\",\n            \"firebase_id\": \"yjxJc66CNMVz8QM9Ogl3D4VWKLK2\",\n            \"phone_id\": \"test@blackboardapp.co\",\n            \"displayName\": \"User Test\",\n            \"email\": \"test@blackboardapp.co\",\n            \"photoURL\": \"https://firebasestorage.googleapis.com/v0/b/blackboard-th.appspot.com/o/images%2Fprofile%2Fprovider_photo%2Fdefault.png?alt=media&token=9a1fe141-5647-4171-96b9-98e26f94ffe5\",\n            \"phoneNumber\": \"+66803147507\",\n            \"providerId\": \"password\"\n        }\n    ],\n    \"providerData\": [\n        {\n            \"uid\": \"test@blackboardapp.co\",\n            \"displayName\": \"User Test\",\n            \"photoURL\": \"https://firebasestorage.googleapis.com/v0/b/blackboard-th.appspot.com/o/images%2Fprofile%2Fprovider_photo%2Fdefault.png?alt=media&token=9a1fe141-5647-4171-96b9-98e26f94ffe5\",\n            \"email\": \"test@blackboardapp.co\",\n            \"phoneNumber\": null,\n            \"providerId\": \"password\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		}
+	]
+}
